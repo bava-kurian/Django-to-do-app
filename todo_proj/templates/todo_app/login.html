@@ -1,0 +1,33 @@
+<style>
+      .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .form a{
+        text-decoration: underline!important;
+
+      }
+      .form .signin{
+        margin-top: 3rem !important;
+      }
+      h2{
+        text-align: center;
+      }
+</style>
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+<h2>Login and continue your journey.</h2>
+<div class="form">
+    <form action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+   <div class="submit"><input type="submit" value="Login" class="btn btn-warning fw-bold"></div>
+</form>
+
+<div class="signin"><p>Don't have an acount don't worry   <a href="{% url 'register'%}">Join Along</a></p></div>
+</div>
+
+{%endblock%}

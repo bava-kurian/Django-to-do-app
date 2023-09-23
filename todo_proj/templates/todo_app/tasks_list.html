@@ -1,0 +1,123 @@
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+<style>
+    .table{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    }
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+    .styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+td a{
+    text-decoration: underline;
+    color: #009879;
+}
+
+a :hover{
+    transform: scale(1.05);
+}
+a :active{
+    scale: 0.95;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+.create a{
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 20px;
+    width: 100px;
+    margin-left: 20rem;
+
+  }
+
+
+
+</style>
+<div class="header">
+    <H2>Hi {{request.user.username}}</H2><br>
+    <h4>You have <i>{{count}} </i>incomplete tasks</h4>
+</div>
+
+<div class="table">
+   <table class="styled-table">
+    <thead>
+        <tr>
+
+            <th>Task</th>
+            <th>Description</th>
+            <th>Action</th>
+            <th>Due At</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {%for task in tasks%}
+        <tr>
+            {%if task.compleated%}
+            <td><a href="{%url 'task_detail' task.id%}"><p class="text-decoration-line-through">{{task.title}}</p></a></td>
+            {%else%}
+            <td><a href="{%url 'task_detail' task.id%}"><p>{{task.title}}</p></a></td>
+            {%endif%}
+            <td>{{task.description}}</td>
+            <td>
+                <a href="{% url 'task_update' task.id%}">Update</a>
+                <a href="{% url 'task_delete' task.id%}" class="text-danger">delete</a>
+            </td>
+            <td>
+                {{task.due_at}}
+            </td>
+            <td>{%if task.compleated%}
+                <p class="text-success">Completed</p>
+                {%else%}
+                <p class="text-danger">Pending</p>
+                {%endif%}
+            </td>
+        </tr>
+        {%empty%}
+        <tr>
+           <td><p>No tasks found</p></td> 
+        </tr>
+
+        {% endfor %}
+
+        <tr>
+            <td>        </div>
+        <div class="create"><a href="{%url 'task_create'%}">Add Task</a></div>
+        </div>
+    </td>
+
+        </tr>
+    </tbody>
+</table> 
+
+
+{%endblock%}

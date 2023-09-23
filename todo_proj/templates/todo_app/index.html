@@ -1,0 +1,37 @@
+
+<style>
+    body{
+        font-weight: 500!important;
+    }
+    
+</style>
+
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+<div class="catch">
+    <h1>Hola amigo <i class="fa-solid fa-wand-sparkles"></i> <br>
+        feeling left behind don't worry
+       <span style="font-weight: bold;" ><a href="{%url 'register'%}" class='text-decoration-underline'>Lets do it!</a></span><br>
+       - Here we make Tasks Transform into Triumphs!</h1>
+   
+   <p class="text-center">Embark on a journey of productivity and accomplishment with TaskTopia, your ultimate task ally.
+        Navigate through the chaos of daily life with grace, one task at a time.</p>    
+   
+   
+        <div class="features">
+           <h3>Unleash Your Potential:</h3>
+           <ul>
+               <li><span class="fw-bold">Simple Task Input:</span>  Quickly jot down your to-dos with our easy task input feature. Never let a great idea slip away.</li>
+               <li><span class="fw-bold">Prioritize with Ease:</span> Organize your tasks by priority, making it simple to focus on what's important and accomplish your goals efficiently.</li>
+               <li><span class="fw-bold">Intuitive Interface:</span> Our user-friendly design ensures a seamless experience, allowing you to navigate effortlessly and get things done.</li>
+               <li><span class="fw-bold">Cross-Platform Access:</span> Access your tasks anytime, anywhere.Lets do it is available as wen app, so you're always in sync</li>
+           </ul>
+        </div>
+   
+       <div class="Stepup">
+           <h3>What are ypu waiting for....</h3>
+           <h2><span style="font-weight: bold;" ><a class="text-decoration-underline" href="{%url 'register'%}">Lets do it!</a></span>together and sconjure greatness!</h2>
+       </div>
+</div>
+
+{%endblock%}

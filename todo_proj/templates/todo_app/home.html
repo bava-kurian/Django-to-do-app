@@ -1,0 +1,8 @@
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+{%for task in tasks%}
+<ol>
+    <li>t{{task.title}}</li>
+</ol>
+{% endfor %}
+{%endblock%}

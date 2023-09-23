@@ -1,0 +1,56 @@
+
+<style>
+    body{
+        font-weight: 500!important;
+    }
+    .items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .socialmedia li{
+        list-style: none;
+        margin:10rem 3rem;
+    
+    
+    }
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .social-icons i{
+        font-size: 2rem;
+    }
+    
+</style>
+
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+
+<div class="items">
+    <div class="catch">
+   <h1>Share the Magic of Lets do it!</h1> 
+   <p>
+    Spread the enchantment of productivity by sharing TLets go it! with your fellow seekers of accomplishment. 
+    Let's craft a world where every task is a step towards greatness!
+
+   </p></div>
+
+      <div class="socialmedia">
+    <ul class="social-icons">
+        <li><a href="https://instagram.com/_.reeba_.rebecca?igshid=MzMyNGUyNmU2YQ=="><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/reeba-rebecca-varghese-6196b1207"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://x.com/reeba_rebecca?t=Y8PuZT1Y7xlEplByWi7vKw&s=08"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="mailto:rebeccavarghese30@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+
+</div>         
+
+</div>
+
+
+   
+{%endblock%}

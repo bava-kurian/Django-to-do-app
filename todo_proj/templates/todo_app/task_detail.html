@@ -1,0 +1,33 @@
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+<style>
+    .task{
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-around;
+        height: 75vh;
+    }
+    p{
+        text-align: center;
+
+    }
+</style>
+<div class="task">
+   <h3><i class="fa-solid fa-thumbtack">  </i>Task:{{task.title}}</h3>
+<div class="descs">
+    <p><i class="fa-solid fa-circle-info">  </i>{{task.description}}</p>
+</div>
+<div>
+    {%if task.compleated%}
+                <p class="text-success"><i class="fa-solid fa-list-check"></i>Completed</p>
+                {%else%}
+                <p class="text-danger"><i class="fa-solid fa-list-check"></i>Pending</p>
+                {%endif%}
+</div> 
+<div class="due">
+    <p> <i class="fa-solid fa-hourglass-half"></i>{{task.due_at}}</p>
+</div>
+</div>
+
+{%endblock%}

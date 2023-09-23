@@ -1,0 +1,39 @@
+<style>
+    .submit input {
+        border-radius: 20px;
+        background-color: orange;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        height: 20px;
+        width: 100px;
+  
+      }
+      .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        margin-top: 5rem;
+      }
+</style>
+{%extends 'todo_app/base.html'%}
+{% block baseblock%}
+<h1>Update Task</h1>
+<form action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+   <div class="submit"><input type="submit" value="Submit"></div>
+</form>
+{% if messages %}
+    <div class="col-lg-3 color03">
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{%endblock%}
